@@ -49,7 +49,7 @@ func Run() {
 
 	ctx := &Context{VariableMap: map[*VariableExpression]int{x: 3, y: 7}}
 
-	result := &SubtractExpression{
+	expression := &SubtractExpression{
 		A: x,
 		B: &AddExpression{
 			A: y,
@@ -57,6 +57,6 @@ func Run() {
 		},
 	}
 
-	fmt.Println(result.Interpret(ctx))
+	fmt.Println(expression.Interpret(ctx))
 
 }
