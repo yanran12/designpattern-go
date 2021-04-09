@@ -33,7 +33,7 @@ func NewTask(observers []Observer) *Task {
 func (t *Task) ChangeState(state string) {
 	t.state = state
 
-	fmt.Println("任务进入开始状态")
+	fmt.Println("任务进入", state, "状态")
 	for _, observer := range t.observers {
 		observer.Notify(state)
 	}
